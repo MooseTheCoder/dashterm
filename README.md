@@ -1,0 +1,33 @@
+# dashterm
+Again...more pointlessness
+
+
+Time,
+
+free -h
+
+Connections port 80
+
+Connects port 443
+
+DBAD
+
+#!/bin/bash
+
+while [ 1 ]
+do
+echo ""
+date
+echo ""
+echo "free -h"
+free -h
+echo ""
+echo "Port 80 Connections"
+netstat -tn 2>/dev/null | grep :80 | awk '{print $5}'| cut -d: -f1 | sort | uniq -c | sort -nr | head
+echo ""
+echo "Port 443 Connections"
+netstat -tn 2>/dev/null | grep :443 | awk '{print $5}'| cut -d: -f1 | sort | uniq -c | sort -nr | head
+sleep 1
+clear
+done
+
